@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/wfit.png");
+    background-position: center;
+}
+  
+.container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    background-color: #fdfdfd;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+  
+.container header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+}
+  
+  
+.infos {
+    width: 850px;
+    padding-left: 7.5rem;
+}
+
+.grupo-muscular{
+    width: 80%;
+    display: flex;
+}
+
+.grupo-muscular p{
+    padding-right: 0.5rem;
+}
+
+label {
+    font-weight: bold;
+}
+  
+p {
+    font-size: 15px;
+}
+  
+.treinando {
+    margin-top: 0.5rem;
+}
+  
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+  
+    .infos {
+        width: auto;
+        padding-left: 0;
+    }
+  
+    label,
+    p {
+        font-size: 14px;
+    }
+}
+  
+@media (max-width: 400px) {
+    .container {
+        border-radius: 0;
+    }
+}
+  

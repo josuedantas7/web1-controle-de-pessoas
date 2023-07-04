@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WFIT Academia</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="titulo">Sistema Controle de Alunos WFIT</h1>
+      </header>
+      <form id="formulario">
+        <p>Adicionar aluno: </p>
+        <div class="formulario-submit">
+          <input type="text" id="formulario-submit-input" value="Aluno" required />
+          <button type="submit">
+            <i class="fa-thin fa-plus"></i>
+          </button>
+        </div>
+        <div class="check">
+          <label>Grupo muscular que irá treinar:</label>
+          <div class="musculos">
+            <input type="checkbox" id="musculo1" name="membro" value="Pernas">
+            <label for="musculo1"> Pernas</label>
+            <input type="checkbox" id="musculo2" name="membro" value="Peito">
+            <label for="musculo2"> Peito</label>
+            <input type="checkbox" id="musculo3" name="membro" value="Ombro">
+            <label for="musculo3"> Ombro</label>
+            <input type="checkbox" id="musculo4" name="membro" value="Costas">
+            <label for="musculo4"> Costas</label><br>
+            <input type="checkbox" id="musculo5" name="membro" value="Triceps">
+            <label for="musculo5"> Triceps</label>
+            <input type="checkbox" id="musculo6" name="membro" value="Biceps">
+            <label for="musculo6"> Biceps</label>
+            <input type="checkbox" id="musculo7" name="membro" value="Panturrilha">
+            <label for="musculo7"> Panturrilha</label>
+          </div>
+        </div>
+      </form>
+      <div id="aluno-list">
+        <div class="aluno">
+          <h3>Josué Dantas</h3>
+          <p>Musculos: Triceps Biceps Panturrilha</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Willy Ribeiro</h3>
+          <p>Musculos: Pernas Peito Ombro</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Gabryel</h3>
+          <p>Musculos: Triceps Biceps Panturrilha</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Álife Silva</h3>
+          <p>Musculos: Pernas Peito Ombro</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Gabriel Araújo</h3>
+          <p>Musculos: Triceps Biceps Panturrilha</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Khalel Édipo</h3>
+          <p>Musculos: Pernas Peito Ombro</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Matheus Alves</h3>
+          <p>Musculos: Triceps Biceps Panturrilha</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Dhennifer Alves</h3>
+          <p>Musculos: Pernas Peito Ombro</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Tony Ribeiro</h3>
+          <p>Musculos: Triceps Biceps Panturrilha</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="aluno">
+          <h3>Gabriel Baia</h3>
+          <p>Musculos: Pernas Peito Ombro</p>
+          <button class="remove-aluno">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
