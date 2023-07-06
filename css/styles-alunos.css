@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     font-family: Helvetica;
-    color: #333;
 }
 
 body {
@@ -11,64 +10,43 @@ body {
 }
   
 .container {
-    max-width: 1000px;
+    max-width: 70%;
     margin: 3rem auto;
     background-color: #fdfdfd;
-    padding: 1.5rem;
+    padding: 1.5rem 0 1.5rem 10rem;
     border-radius: 15px;
-}
-  
-.container header {
-    text-align: center;
-    padding: 0 1rem 1rem;
-}
-  
-  
-.infos {
-    width: 850px;
-    padding-left: 7.5rem;
-}
-
-.grupo-muscular{
-    width: 80%;
-    display: flex;
-}
-
-.grupo-muscular p{
-    padding-right: 0.5rem;
 }
 
 label {
     font-weight: bold;
 }
-  
-p {
-    font-size: 15px;
+
+.container header {
+    text-align: center;
+    margin-bottom: 1rem;
 }
   
+.infos {
+    width: 40%;
+}
+
 .treinando {
     margin-top: 0.5rem;
 }
-  
-@media (max-width: 600px) {
-    .container {
-        padding: 1rem;
-    }
-  
-    .infos {
-        width: auto;
-        padding-left: 0;
-    }
-  
-    label,
-    p {
-        font-size: 14px;
+
+.grupo-muscular{
+    width: 60%;
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grupo-muscular p{
+    padding-bottom: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .grupo-muscular {
+      grid-template-columns: 1fr;
     }
 }
-  
-@media (max-width: 400px) {
-    .container {
-        border-radius: 0;
-    }
-}
-  
