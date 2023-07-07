@@ -5,7 +5,6 @@
 }
 
 body {
-    background-position: center;
     background-color: rgba(0, 0, 0, 0.822);
 }
 
@@ -20,9 +19,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 10%;
-    margin-left: 20%;
-    margin: 10% 10% 0 10%;
+    margin: 10% 10% 10% 10%;
     border: 1px solid black;
     padding: 10px 0 10px 10px;
     border-radius: 20px;
@@ -47,11 +44,11 @@ body {
     margin-top: 5%;
 }
 
-.container-login{
+.container-login{ 
     border: 1px solid black;
     border-radius: 20px;
     margin: 0 25% 0 25%;
-    padding: 3% 4% 3% 0;
+    padding: 3% 0 3% 0;
     background-color: rgba(128, 128, 128, 0.253);
 
 }
@@ -61,7 +58,7 @@ body {
     border-radius: 20px;
     margin: 0 10% 0 10%;
     padding: 5% 5% 5% 5%;
-    width: 70%
+    width: 70%;
 }
 
 .container-login button{
@@ -75,7 +72,6 @@ body {
 
 .container-login button:hover{
     background-color: rgba(128, 128, 128, 0.753);
-    color: white;
 }
 
 .container-login h1{
