@@ -48,8 +48,6 @@ body {
 }
 
 .container-login{
-    box-sizing: border-box;;
-    flex-direction: column;
     border: 1px solid black;
     border-radius: 20px;
     margin: 0 25% 0 25%;
