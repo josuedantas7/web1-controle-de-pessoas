@@ -10,10 +10,10 @@ body {
 }
   
 .container {
-    max-width: 70%;
+    max-width: 50%;
     margin: 3rem auto;
     background-color: #fdfdfd;
-    padding: 1.5rem 0 1.5rem 10rem;
+    padding: 3rem 0 2rem 0rem;
     border-radius: 15px;
 }
 
@@ -27,18 +27,24 @@ label {
 }
   
 .infos {
-    width: 40%;
+    width: 100%;
+    text-align: center;
 }
 
 .treinando {
     margin-top: 0.5rem;
+
 }
 
 .grupo-muscular{
-    width: 60%;
-    margin-top: 0.5rem;
+    width: 50%;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);   
+}
+
+.grupo-muscular{
+    margin-top: 0.5rem;
 }
 
 .grupo-muscular p{
@@ -50,3 +56,9 @@ label {
       grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 940px) {
+    .container{
+        padding: 5% 5% 5% 5%;
+    }
+  }
