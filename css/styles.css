@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   font-family: Helvetica;
-  color: #333;
 }
 
 
@@ -13,8 +12,7 @@ body {
 
 button {
   background-color: #fdfdfd;
-  color: #102f5e;
-  border: 2px solid #102f5e;
+  border: 1px solid #102f5e;
   padding: 0.3rem 0.6rem;
   font-size: 1rem;
   cursor: pointer;
@@ -23,7 +21,6 @@ button {
 
 button:hover {
   background-color: #102f5e;
-  color: #fff;
 }
 
 button:hover > i {
@@ -31,7 +28,7 @@ button:hover > i {
 }
 
 input {
-  padding: 0.25rem 0.5rem;
+  padding: 0.45rem 0.6rem;
 }
 
 .container {
@@ -48,23 +45,6 @@ input {
 
 #formulario {
   padding: 1rem 0 1rem 0;
-}
-
-#formulario p {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.formulario {
-  display: flex;
-  margin-bottom: 0.5rem;
-}
-
-.formulario input {
-  margin-right: 0.5rem;
-}
-
-.check {
   font-weight: bold;
 }
 
@@ -80,8 +60,6 @@ input {
   display: flex;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #ddd;
-  transition: 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -89,3 +67,4 @@ input {
     grid-template-columns: 1fr;
   }
 }
+
