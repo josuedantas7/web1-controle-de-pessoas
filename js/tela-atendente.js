@@ -34,7 +34,6 @@ const saveAluno = (text, membros) => {
     aluno.remove();
     removeAluno(text);
     updateAlunosCount();
-    updateChart();
     window.parent.postMessage({ action: "alunoRemovido" }, "*");
   });
   aluno.appendChild(deleteBtn);
@@ -63,8 +62,12 @@ const desmarcarCheckbox = () => {
 // Função para remover aluno do localStorage
 const removeAluno = (nome) => {
   let alunos = JSON.parse(localStorage.getItem(ALUNOS_KEY)) || [];
-  alunos = alunos.filter((aluno) => aluno.nome !== nome);
-  localStorage.setItem(ALUNOS_KEY, JSON.stringify(alunos));
+  const alunoIndex = alunos.findIndex((aluno) => aluno.nome === nome);
+  if (alunoIndex !== -1) {
+    alunos.splice(alunoIndex, 1);
+    localStorage.setItem(ALUNOS_KEY, JSON.stringify(alunos));
+    window.parent.postMessage({ action: "alunoRemovido", alunoNome: nome }, "*");
+  }
 };
 
 alunoForm.addEventListener("submit", (e) => {
@@ -88,5 +91,4 @@ alunoForm.addEventListener("submit", (e) => {
 // Atualizar a página dos Alunos assim que ela for carregada
 if (window.location.pathname.includes("tela-aluno.html")) {
   updateAlunosCount();
-  updateChart();
 }

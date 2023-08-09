@@ -4,12 +4,28 @@ const chartCanvas = document.querySelector("#chart");
 
 let chart;
 
+localStorage.clear();
+
+
 window.addEventListener("message", (event) => {
   if (event.data && event.data.action === "alunoRemovido") {
+    const alunoNomeRemovido = event.data.alunoNome;
+    removeAlunoFromUI(alunoNomeRemovido);
     updateAlunosCount();
     updateChart();
   }
 });
+
+const removeAlunoFromUI = (alunoNome) => {
+  const alunoElements = document.querySelectorAll(".aluno");
+  alunoElements.forEach((alunoElement) => {
+    const nomeElement = alunoElement.querySelector("h3");
+    if (nomeElement.innerText === alunoNome) {
+      alunoElement.remove();
+    }
+  });
+};
+
 
 const updateAlunosCount = () => {
   const totalAlunos = JSON.parse(localStorage.getItem(ALUNOS_KEY))?.length || 0;
