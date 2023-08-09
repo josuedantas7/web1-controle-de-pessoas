@@ -25,40 +25,16 @@ label {
     text-align: center;
     margin-bottom: 1rem;
 }
-  
-.infos {
-    width: 100%;
+
+#aluno-list{
     text-align: center;
+    margin-bottom: 1%;
 }
 
-.treinando {
-    margin-top: 0.5rem;
-
+#aluno-list p{
+    font-weight: 600;
 }
 
-.grupo-muscular{
-    width: 50%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);   
+#aluno-list span{
+    font-weight: 100;
 }
-
-.grupo-muscular{
-    margin-top: 0.5rem;
-}
-
-.grupo-muscular p{
-    padding-bottom: 0.2rem;
-}
-
-@media (max-width: 768px) {
-    .grupo-muscular {
-      grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 940px) {
-    .container{
-        padding: 5% 5% 5% 5%;
-    }
-  }
