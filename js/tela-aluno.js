@@ -18,10 +18,10 @@ window.addEventListener("message", (event) => {
 
 const removeAlunoFromUI = (alunoNome) => {
   const alunoElements = document.querySelectorAll(".aluno");
-  alunoElements.forEach((alunoElement) => {
-    const nomeElement = alunoElement.querySelector("h3");
+  alunoElements.forEach((aluno) => {
+    const nomeElement = aluno.querySelector("h3");
     if (nomeElement.innerText === alunoNome) {
-      alunoElement.remove();
+      aluno.remove();
     }
   });
 };
