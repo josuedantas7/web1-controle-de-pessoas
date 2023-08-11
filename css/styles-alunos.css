@@ -7,6 +7,7 @@
 body {
     background-image: url("../img/wfit.png");
     background-position: center;
+    background-attachment: fixed;
 }
   
 .container {

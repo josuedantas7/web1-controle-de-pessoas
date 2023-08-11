@@ -8,6 +8,7 @@
 body {
   background-image: url("../img/wfit.png");
   background-position: center;
+  background-attachment: fixed;
 }
 
 button {
@@ -32,7 +33,7 @@ input {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 47.5%;
   margin: 3rem auto;
   background-color: #fdfdfd;
   padding: 1.5rem;
