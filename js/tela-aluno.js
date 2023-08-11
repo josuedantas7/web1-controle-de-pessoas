@@ -1,11 +1,9 @@
 const ALUNOS_KEY = "alunos";
+
 const alunosCount = document.querySelector("#alunos-count");
 const chartCanvas = document.querySelector("#chart");
 
 let chart;
-
-localStorage.clear();
-
 
 window.addEventListener("message", (event) => {
   if (event.data && event.data.action === "alunoRemovido") {
@@ -26,7 +24,6 @@ const removeAlunoFromUI = (alunoNome) => {
   });
 };
 
-
 const updateAlunosCount = () => {
   const totalAlunos = JSON.parse(localStorage.getItem(ALUNOS_KEY))?.length || 0;
   alunosCount.textContent = totalAlunos;
@@ -37,7 +34,9 @@ const updateChart = () => {
   const musculosCount = {};
 
   for (let i = 0; i < alunos.length; i++) {
+    console.log(alunos)
     const alunoData = alunos[i];
+    console.log(alunoData)
     const membros = alunoData.membros;
 
     for (let j = 0; j < membros.length; j++) {

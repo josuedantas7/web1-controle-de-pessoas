@@ -3,12 +3,19 @@ const ALUNOS_KEY = "alunos";
 const alunoForm = document.querySelector("#formulario");
 const alunoInput = document.querySelector("#formulario-submit-input");
 const checkboxes = document.querySelectorAll('input[name="membro"]');
+const limparAlunosButton = document.querySelector("#limpar-alunos");
+
 
 const saveAluno = (text, membros) => {
   const alunoData = {
     nome: text,
     membros: membros,
   };
+
+  if (membros.length === 0) {
+    alert("Selecione pelo menos um grupo muscular");
+    return;
+  }
 
   let alunos = JSON.parse(localStorage.getItem(ALUNOS_KEY)) || [];
   alunos.push(alunoData);
@@ -44,6 +51,7 @@ const saveAluno = (text, membros) => {
   alunoInput.focus();
 
   updateAlunosCount();
+  desmarcarCheckbox();
 };
 
 const updateAlunosCount = () => {
@@ -58,6 +66,20 @@ const desmarcarCheckbox = () => {
     checkbox.checked = false;
   });
 };
+
+limparAlunosButton.addEventListener("click", function () {
+  if (confirm("Tem certeza que deseja remover todos os alunos?")) {
+    removerTodosAlunos();
+    const alunoList = document.querySelector("#aluno-list");
+    alunoList.innerHTML = ""; // Limpa a lista de alunos na tela
+    updateAlunosCount();
+    alert("Todos os alunos foram removidos.");
+  }
+});
+
+function removerTodosAlunos() {
+  localStorage.removeItem(ALUNOS_KEY);
+}
 
 // Função para remover aluno do localStorage
 const removeAluno = (nome) => {
@@ -79,10 +101,6 @@ alunoForm.addEventListener("submit", (e) => {
     const membrosSelecionados = Array.from(
       document.querySelectorAll('input[name="membro"]:checked')
     ).map((checkbox) => checkbox.value);
-    if (membrosSelecionados.length === 0) {
-      alert("Selecione pelo menos um grupo muscular");
-      return;
-    }
     saveAluno(valorInput, membrosSelecionados);
     desmarcarCheckbox();
   }

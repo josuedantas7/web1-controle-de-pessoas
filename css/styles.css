@@ -56,6 +56,20 @@ input {
   border-radius: 8px; 
 }
 
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row .botao{
+  margin-right: 10%;
+}
+
+#limpar-alunos:hover {
+  color: white;
+}
+
 .aluno {
   display: flex;
   justify-content: space-between;
@@ -67,4 +81,5 @@ input {
     grid-template-columns: 1fr;
   }
 }
+
 
