@@ -4,24 +4,22 @@ const alunosCount = document.querySelector("#alunos-count");
 const chartCanvas = document.querySelector("#chart");
 
 let chart;
+let nextAlunoId = 1;
 
 window.addEventListener("message", (event) => {
   if (event.data && event.data.action === "alunoRemovido") {
-    const alunoNomeRemovido = event.data.alunoNome;
-    removeAlunoFromUI(alunoNomeRemovido);
+    const alunoIdRemovido = event.data.alunoId;
+    removeAlunoFromUI(alunoIdRemovido);
     updateAlunosCount();
     updateChart();
   }
 });
 
-const removeAlunoFromUI = (alunoNome) => {
-  const alunoElements = document.querySelectorAll(".aluno");
-  alunoElements.forEach((aluno) => {
-    const nomeElement = aluno.querySelector("h3");
-    if (nomeElement.innerText === alunoNome) {
-      aluno.remove();
-    }
-  });
+const removeAlunoFromUI = (alunoId) => {
+  const alunoElement = document.querySelector(`.aluno[data-id="${alunoId}"]`);
+  if (alunoElement) {
+    alunoElement.remove();
+  }
 };
 
 const updateAlunosCount = () => {
@@ -34,9 +32,7 @@ const updateChart = () => {
   const musculosCount = {};
 
   for (let i = 0; i < alunos.length; i++) {
-    console.log(alunos)
     const alunoData = alunos[i];
-    console.log(alunoData)
     const membros = alunoData.membros;
 
     for (let j = 0; j < membros.length; j++) {
@@ -85,11 +81,9 @@ const updateChart = () => {
   }
 };
 
-// Atualizar o contador de alunos e o gráfico assim que a página for carregada
 updateAlunosCount();
 updateChart();
 
-// Adiciona um evento para ouvir mudanças no localStorage
 window.addEventListener("storage", () => {
   updateAlunosCount();
   updateChart();

@@ -5,12 +5,16 @@ const alunoInput = document.querySelector("#formulario-submit-input");
 const checkboxes = document.querySelectorAll('input[name="membro"]');
 const limparAlunosButton = document.querySelector("#limpar-alunos");
 
+let nextAlunoId = 1;
 
 const saveAluno = (text, membros) => {
   const alunoData = {
+    id: nextAlunoId,
     nome: text,
     membros: membros,
   };
+
+  nextAlunoId++; // Incremento do ID
 
   if (membros.length === 0) {
     alert("Selecione pelo menos um grupo muscular");
@@ -25,6 +29,7 @@ const saveAluno = (text, membros) => {
 
   const aluno = document.createElement("div");
   aluno.classList.add("aluno");
+  aluno.setAttribute("data-id", alunoData.id);
 
   const alunoNome = document.createElement("h3");
   alunoNome.innerText = text;
@@ -39,7 +44,7 @@ const saveAluno = (text, membros) => {
   deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
   deleteBtn.addEventListener("click", () => {
     aluno.remove();
-    removeAluno(text);
+    removeAluno(alunoData.id);
     updateAlunosCount();
     window.parent.postMessage({ action: "alunoRemovido" }, "*");
   });
@@ -71,7 +76,7 @@ limparAlunosButton.addEventListener("click", function () {
   if (confirm("Tem certeza que deseja remover todos os alunos?")) {
     removerTodosAlunos();
     const alunoList = document.querySelector("#aluno-list");
-    alunoList.innerHTML = ""; // Limpa a lista de alunos na tela
+    alunoList.innerHTML = "";
     updateAlunosCount();
     alert("Todos os alunos foram removidos.");
   }
@@ -81,14 +86,13 @@ function removerTodosAlunos() {
   localStorage.removeItem(ALUNOS_KEY);
 }
 
-// Função para remover aluno do localStorage
-const removeAluno = (nome) => {
+const removeAluno = (id) => {
   let alunos = JSON.parse(localStorage.getItem(ALUNOS_KEY)) || [];
-  const alunoIndex = alunos.findIndex((aluno) => aluno.nome === nome);
+  const alunoIndex = alunos.findIndex((aluno) => aluno.id === id);
   if (alunoIndex !== -1) {
     alunos.splice(alunoIndex, 1);
     localStorage.setItem(ALUNOS_KEY, JSON.stringify(alunos));
-    window.parent.postMessage({ action: "alunoRemovido", alunoNome: nome }, "*");
+    window.parent.postMessage({ action: "alunoRemovido", alunoId: id }, "*");
   }
 };
 
@@ -106,7 +110,6 @@ alunoForm.addEventListener("submit", (e) => {
   }
 });
 
-// Atualizar a página dos Alunos assim que ela for carregada
 if (window.location.pathname.includes("tela-aluno.html")) {
   updateAlunosCount();
 }
