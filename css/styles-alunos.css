@@ -11,9 +11,8 @@ body {
 }
   
 .container {
-    max-width: 50%;
+    max-width: 90%;
     margin: 3rem auto;
-    background-color: #fdfdfd;
     padding: 3rem 0 2rem 0rem;
     border-radius: 15px;
 }
@@ -23,19 +22,29 @@ label {
 }
 
 .container header {
+    margin: auto;
+    width: 90%;
+    padding: 20px;
     text-align: center;
     margin-bottom: 1rem;
+    background-color: #fdfdfd;
+    border-radius: 15px;
 }
 
 #aluno-list{
     text-align: center;
-    margin-bottom: 1%;
+    margin: 3% 0 1% 0;
 }
 
 #aluno-list p{
     font-weight: 600;
 }
 
-#aluno-list span{
-    font-weight: 100;
+.container .chart-container{
+    padding: 20px;
+    background-color: #fdfdfd;
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
 }
+

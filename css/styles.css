@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: Helvetica;
+  box-sizing: border-box;
 }
 
 
@@ -33,7 +34,7 @@ input {
 }
 
 .container {
-  max-width: 47.5%;
+  max-width: 80%;
   margin: 3rem auto;
   background-color: #fdfdfd;
   padding: 1.5rem;
@@ -49,7 +50,7 @@ input {
   font-weight: bold;
 }
 
-#lista-aluno {
+#aluno-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
@@ -77,10 +78,26 @@ input {
   padding: 1rem 1rem;
 }
 
-@media (max-width: 768px) {
-  #lista-aluno {
+.aluno h3{
+  padding-right: 0.5rem;
+}
+
+.musculos-membros{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 860px) {
+  #aluno-list {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 730px) {
+  .musculos-membros {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 

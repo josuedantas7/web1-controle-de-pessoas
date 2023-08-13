@@ -83,7 +83,7 @@ body {
     margin-bottom: 5%;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1400px) {
     .lado-esquerdo{
         width: 100%;
         background-image: none;
@@ -91,27 +91,22 @@ body {
     }
     
     .lado-direito{
-        display: flex;
         position: absolute;
     }
 
     .container-login{
+        margin-top: 13rem;
         border: 0;
-        border-radius: 0;
-        margin: 0;
-        width: 79.8%;
+        border-radius: 15px;
         background-image: rgba(128, 128, 128, 0);
     }
+}
 
+@media (max-width: 1400px) {
+    .lado-direito {
+        width: 30rem;
+    }
     .container{
-        display: flex;
-        flex-direction: column;
-        padding-top: 0;
+        margin: 1%;
     }
-  }
-
-  @media (max-width: 1550px) {
-    .lado-direito{
-        width: 100%;
-    }
-  }
+}
